@@ -9,7 +9,8 @@ iter = 125 #the iters of an epoch
 
 i = 0
 
-model = YOLO('/path/to/weight/.pt')
+# model = YOLO('/path/to/weight/.pt')
+model = YOLO('ultralytics/cfg/models/v8/snn_yolov8.yaml')
 
 def forward_hook_fn(module, input, output):  # 计算每一层的发放率
     global i
