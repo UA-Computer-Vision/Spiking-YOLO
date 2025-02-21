@@ -49,4 +49,7 @@ torchinfo
 spikingjelly
 timm
 Einops
-torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+--index-url https://download.pytorch.org/whl/cu124
+torch 
+torchvision 
+torchaudio
