@@ -4,12 +4,14 @@ from PIL import Image
 from ultralytics import YOLO
 
 # model = YOLO("/path/to/checkpoint/.pt")
-model = YOLO('runs/detect/train14/weights/best.pt')
+# model = YOLO('runs/detect/train14/weights/best.pt')
+model = YOLO('best2.pt')
 # results = model(['/path/to/data/.jpg'])
 # results = model(['D:/Downloaded Pictures/uruguay costumes.jpg'])
 # results = model(['D:/Downloaded Pictures/Aerial-view-over-Punta-Del-Este-and-Atlantic-Ocean-at-sunset-Uruguay_647676238.jpg'])
+results = model(['D:/Downloaded Pictures/aerial_street.jpg'])
 # results = model(['D:/Downloaded Pictures/blackwhite miate.jpg'])
-results = model(['C:/lxh/lxh_data/coco128/images/train2017/000000000312.jpg'])
+# results = model(['C:/lxh/lxh_data/coco128/images/train2017/000000000312.jpg'])
 for i, r in enumerate(results):
     # Plot results image
     im_bgr = r.plot()  # BGR-order numpy array
