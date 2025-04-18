@@ -9,8 +9,8 @@ iter = 125 #the iters of an epoch
 
 i = 0
 
-# model = YOLO('/path/to/weight/.pt')
-model = YOLO('best2.pt')
+# model = YOLO('/path/to/weight/.pt') # Templae
+model = YOLO('best.pt') # Example
 
 def forward_hook_fn(module, input, output):  # 计算每一层的发放率
     global i
@@ -32,5 +32,5 @@ for n, m in model.named_modules():
         m.name = n
         m.register_forward_hook(forward_hook_fn)
 
-model.val(data="VisDrone.yaml",device=[0])
+model.val(data="VisDrone.yaml",device=[2])
 print("fire:",fr_dict) #the firing rate of each layer

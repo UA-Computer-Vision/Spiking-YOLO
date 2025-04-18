@@ -5,11 +5,15 @@ import time
 
 def detectVideo():
     # Load the SNN model
-    model = YOLO("best2.pt")
+    # model = YOLO("/path/to/trained_model/.pt") # Template
+    model = YOLO("best.pt")
+    
+    # model.to("cpu") # Force model to run on CPU (If GPU w/ CUDA not available)
 
     # Open the camera/video (drone videos are saved in the testVideos/ folder)
-    cap = cv2.VideoCapture('testVideos/720CityVideo.mp4')
-    # cap = cv2.VideoCapture(0)
+    # cap = cv2.VideoCapture('path/to/video.mp4') # Template
+    cap = cv2.VideoCapture('testVideos/720CityVideo.mp4') # Example usage (saved video)
+    # cap = cv2.VideoCapture(0) # Example usage (live camera)
 
     # Average time
     timeSum = 0

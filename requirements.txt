@@ -3,14 +3,12 @@
 
 # Base ----------------------------------------
 matplotlib>=3.3.0
-numpy>=1.22.2 # pinned by Snyk to avoid a vulnerability
+numpy==1.23.5
 opencv-python
 pillow>=7.1.2
 pyyaml>=5.3.1
 requests>=2.23.0
 scipy>=1.4.1
-torch>=1.8.0
-torchvision>=0.9.0
 tqdm>=4.64.0
 
 # Logging -------------------------------------
@@ -49,7 +47,7 @@ torchinfo
 spikingjelly
 timm
 Einops
---index-url https://download.pytorch.org/whl/cu124
-torch 
-torchvision 
-torchaudio
+# If not running on, Nvidia Jetson use below (have to build from source for Jetson)
+torch>=1.8.0 --index-url https://download.pytorch.org/whl/cu124 
+torchvision>=0.9.0 --index-url https://download.pytorch.org/whl/cu124 
+torchaudio --index-url https://download.pytorch.org/whl/cu124
